@@ -1,0 +1,154 @@
+body {
+    margin: 0;
+    color: #222222;
+    font: 16px Arial, sans-serif;
+}
+
+.menu {
+    text-align: center;
+    border-top: 3px solid #dddddd;
+    border-bottom: 3px solid #dddddd;
+}
+
+.menu a {
+    display: inline-block;
+    padding: 1% 1.2%;
+    color: black;
+    text-decoration: none;
+}
+
+.menu a:first-child {
+    border-left: 2px solid #dddddd;
+    border-right: 2px solid #dddddd;
+    color: #009966;
+    font-weight: bold;
+}
+
+.menu a:hover {
+    background: #eeeeee;
+}
+
+.main {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.gallery, .content, .preview, .article {
+    overflow: hidden;
+}
+
+.gallery {
+    margin: 0.7% 0 1.2%;
+}
+
+.gallery-left {
+    float: left;
+    width: 66.7%;
+}
+
+.gallery-right {
+    float: right;
+    width: 33.3%;
+}
+
+.gallery img {
+    display: block;
+    width: 100%;
+}
+
+.sidebar {
+    float: left;
+    width: 20%;
+}
+
+.articles {
+    float: right;
+    width: 78%;
+}
+
+.preview {
+    margin-bottom: 8%;
+}
+
+.preview img {
+    float: right;
+    width: 48%;
+}
+
+.preview-text {
+    float: left;
+    width: 48%;
+}
+
+.preview:nth-child(even) img {
+    float: left;
+}
+
+.preview:nth-child(even) .preview-text {
+    float: right;
+}
+
+.preview h3 {
+    margin: 0 0 3%;
+    font-size: 0.9em;
+}
+
+.preview p {
+    margin: 0 0 3%;
+    font-size: 0.8em;
+}
+
+.preview a {
+    font-size: 0.8em;
+}
+
+.article {
+    border: 1px solid #777777;
+    padding: 0.8%;
+    margin-bottom: 0.8%;
+}
+
+.article img {
+    display: block;
+    width: 25%;
+    float: right;
+}
+
+.article-text {
+    float: left;
+    width: 73%;
+}
+
+.article:nth-child(even) img {
+    float: left;
+}
+
+.article:nth-child(even) .article-text {
+    float: right;
+}
+
+.article h2 {
+    margin: 0 0 1%;
+    text-align: center;
+    font-size: 1.1em;
+}
+
+.article p {
+    margin: 0 0 1%;
+    line-height: 1.35;
+    text-align: justify;
+}
+
+.article a {
+    display: inline-block;
+    padding: 0.5% 1%;
+    background: #2196d2;
+    color: white;
+    text-decoration: none;
+}
+
+.footer {
+    clear: both;
+    text-align: center;
+    border-top: 1px solid #dddddd;
+}
