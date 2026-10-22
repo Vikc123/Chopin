@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8">
+    <title>Таблица вузов для построения графиков и схем</title>
+</head>
+
+<body>
+    <nav>
+        <a href="./table.html">Список университетов мира</a><br>
+        <a href="./home.html">Домашняя страница</a>
+    </nav>
+    <hr>
+    <br>
+    <form>
+        <details>
+            <summary>График</summary>
+            <fieldset>
+                <legend><b>Значение по оси OX</b></legend>
+                <label for="ox_country"><input type="radio" id="ox_country" name="axis_ox" value="country">
+                    Страна</label><br>
+                <label for="ox_type"><input type="radio" id="ox_type" name="axis_ox" value="type"> Тип</label><br>
+                <label for="ox_language"><input type="radio" id="ox_language" name="axis_ox" value="language"> Язык
+                    обучения</label><br>
+                <label for="ox_city"><input type="radio" id="ox_city" name="axis_ox" value="city"> Город</label><br>
+            </fieldset>
+            <fieldset>
+                <legend><b>Значение по оси OY</b></legend>
+                <label for="oy_max_students"><input type="radio" id="oy_max_students" name="axis_oy"
+                        value="max_students">
+                    Максимальное количество студентов</label><br>
+                <label for="oy_min_students"><input type="radio" id="oy_min_students" name="axis_oy"
+                        value="min_students">
+                    Минимальное количество студентов</label><br>
+                <label for="oy_earliest_year"><input type="radio" id="oy_earliest_year" name="axis_oy"
+                        value="earliest_year"> Самый
+                    ранний год основания</label><br>
+                <label for="oy_latest_year"><input type="radio" id="oy_latest_year" name="axis_oy" value="latest_year">
+                    Самый
+                    поздний год основания</label>
+            </fieldset><br><br>
+
+        </details>
+        <details>
+            <summary>Фильтр</summary>
+            <p><label for="filter_name">Название: <input type="text" id="filter_name" name="name"></label></p>
+            <p><label for="filter_type">Тип: <input type="text" id="filter_type" name="type"></label></p>
+            <p><label for="filter_country">Страна: <input type="text" id="filter_country" name="country"></label></p>
+            <p><label for="filter_city">Город: <input type="text" id="filter_city" name="city"></label></p>
+            <p><label for="filter_language">Язык обучения: <input type="text" id="filter_language"
+                        name="language"></label></p>
+            <p>
+                <label for="filter_students_from">Число студентов: от <input type="number" id="filter_students_from"
+                        name="students" min="5000" max="400000"></label>
+                <label for="filter_students_to">до <input type="number" id="filter_students_to" name="students_end"
+                        min="5000" max="400000"></label>
+            </p>
+            <p>
+                <label for="filter_year_from">Год основания: от <input type="number" id="filter_year_from"
+                        name="year_begin" min="1096" max="2026"></label>
+                <label for="filter_year_to">до <input type="number" id="filter_year_to" name="year_end" min="1096"
+                        max="2026"></label>
+            </p>
+        </details>
+
+        <details>
+            <summary>Сортировка</summary>
+            <p>
+                <label for="sort_level_1">Первый уровень:
+                    <select id="sort_level_1" name="sort_1">
+                        <option value="0"> Название </option>
+                        <option value="1"> Год основания </option>
+                        <option value="2"> Город </option>
+                        <option value="3"> Страна </option>
+                        <option value="4"> Тип </option>
+                        <option value="5"> Число студентов </option>
+                        <option value="6"> Язык обучения </option>
+                        <option value="7" selected> Нет </option>
+                    </select>
+                </label>
+                <label for="sort_desc_1">по убыванию? <input type="checkbox" id="sort_desc_1"
+                        name="desc_sort_1"></label>
+            </p>
+            <p>
+                <label for="sort_level_2">Второй уровень:
+                    <select id="sort_level_2" name="sort_2">
+                        <option value="0"> Название </option>
+                        <option value="1"> Год основания </option>
+                        <option value="2"> Город </option>
+                        <option value="3"> Страна </option>
+                        <option value="4"> Тип </option>
+                        <option value="5"> Число студентов </option>
+                        <option value="6"> Язык обучения </option>
+                        <option value="7" selected> Нет </option>
+                    </select>
+                </label>
+                <label for="sort_desc_2">по убыванию? <input type="checkbox" id="sort_desc_2"
+                        name="desc_sort_2"></label>
+            </p>
+            <p>
+                <label for="sort_level_3">Третий уровень:
+                    <select id="sort_level_3" name="sort_3">
+                        <option value="0"> Название </option>
+                        <option value="1"> Год основания </option>
+                        <option value="2"> Город </option>
+                        <option value="3"> Страна </option>
+                        <option value="4"> Тип </option>
+                        <option value="5"> Число студентов </option>
+                        <option value="6"> Язык обучения </option>
+                        <option value="7" selected> Нет </option>
+                    </select>
+                </label>
+                <label for="sort_desc_3">по убыванию? <input type="checkbox" id="sort_desc_3"
+                        name="desc_sort_3"></label>
+            </p>
+            <input type="button" id="btn_sort" value="Сортировать">
+        </details>
+    </form>
+    <br>
+    <table border="1" cellspacing="5">
+        <tr>
+            <th>№</th>
+            <th>Университет</th>
+            <th>Год основания</th>
+            <th>Город</th>
+            <th>Страна</th>
+            <th>Тип</th>
+            <th>Язык обучения</th>
+            <th>Число студентов</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>Дальневосточный федеральный университет (ДВФУ)</td>
+            <td>1899</td>
+            <td>Владивосток</td>
+            <td>Россия</td>
+            <td>Государственный</td>
+            <td>Русский</td>
+            <td>18000</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Massachusetts Institute of Technology (MIT)</td>
+            <td>1861</td>
+            <td>Кембридж</td>
+            <td>США</td>
+            <td>Частный</td>
+            <td>Английский</td>
+            <td>11500</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>University of Oxford</td>
+            <td>1096</td>
+            <td>Оксфорд</td>
+            <td>Великобритания</td>
+            <td>Государственный</td>
+            <td>Английский</td>
+            <td>26000</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>МГУ им. М.В. Ломоносова</td>
+            <td>1755</td>
+            <td>Москва</td>
+            <td>Россия</td>
+            <td>Государственный</td>
+            <td>Русский</td>
+            <td>40000</td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>Казанский федеральный университет</td>
+            <td>1804</td>
+            <td>Казань</td>
+            <td>Россия</td>
+            <td>Государственный</td>
+            <td>Русский</td>
+            <td>45000</td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td>Уральский федеральный университет</td>
+            <td>1920</td>
+            <td>Екатеринбург</td>
+            <td>Россия</td>
+            <td>Государственный</td>
+            <td>Русский</td>
+            <td>35000</td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td>Новосибирский государственный университет</td>
+            <td>1958</td>
+            <td>Новосибирск</td>
+            <td>Россия</td>
+            <td>Государственный</td>
+            <td>Русский</td>
+            <td>7000</td>
+        </tr>
+        <tr>
+            <td>8</td>
+            <td>University of Ghana</td>
+            <td>1948</td>
+            <td>Аккра (Легон)</td>
+            <td>Гана</td>
+            <td>Государственный</td>
+            <td>Английский</td>
+            <td>38000</td>
+        </tr>
+        <tr>
+            <td>9</td>
+            <td>University of Nairobi</td>
+            <td>1956</td>
+            <td>Найроби</td>
+            <td>Кения</td>
+            <td>Государственный</td>
+            <td>Английский</td>
+            <td>84000</td>
+        </tr>
+        <tr>
+            <td>10</td>
+            <td>Addis Ababa University</td>
+            <td>1950</td>
+            <td>Аддис-Абеба</td>
+            <td>Эфиопия</td>
+            <td>Государственный</td>
+            <td>Английский</td>
+            <td>48000</td>
+        </tr>
+        <tr>
+            <td>11</td>
+            <td>Cairo University</td>
+            <td>1908</td>
+            <td>Гиза</td>
+            <td>Египет</td>
+            <td>Государственный</td>
+            <td>Арабский</td>
+            <td>155000</td>
+        </tr>
+        <tr>
+            <td>12</td>
+            <td>University of Cape Town</td>
+            <td>1829</td>
+            <td>Кейптаун</td>
+            <td>ЮАР</td>
+            <td>Государственный</td>
+            <td>Английский</td>
+            <td>29000</td>
+        </tr>
+        <tr>
+            <td>13</td>
+            <td>Stellenbosch University</td>
+            <td>1918</td>
+            <td>Стелленбос</td>
+            <td>ЮАР</td>
+            <td>Государственный</td>
+            <td>Английский</td>
+            <td>32000</td>
+        </tr>
+        <tr>
+            <td>14</td>
+            <td>Universidad Nacional Autónoma de México (UNAM)</td>
+            <td>1910</td>
+            <td>Мехико</td>
+            <td>Мексика</td>
+            <td>Государственный</td>
+            <td>Испанский</td>
+            <td>350000</td>
+        </tr>
+        <tr>
+            <td>15</td>
+            <td>Universidad de Buenos Aires</td>
+            <td>1821</td>
+            <td>Буэнос-Айрес</td>
+            <td>Аргентина</td>
+            <td>Государственный</td>
+            <td>Испанский</td>
+            <td>300000</td>
+        </tr>
+        <tr>
+            <td>16</td>
+            <td>Universidade de São Paulo</td>
+            <td>1934</td>
+            <td>Сан-Паулу</td>
+            <td>Бразилия</td>
+            <td>Государственный</td>
+            <td>Португальский</td>
+            <td>90000</td>
+        </tr>
+        <tr>
+            <td>17</td>
+            <td>Pontificia Universidad Católica de Chile</td>
+            <td>1888</td>
+            <td>Сантьяго</td>
+            <td>Чили</td>
+            <td>Частный</td>
+            <td>Испанский</td>
+            <td>28000</td>
+        </tr>
+        <tr>
+            <td>18</td>
+            <td>Universidad Nacional de Colombia</td>
+            <td>1867</td>
+            <td>Богота</td>
+            <td>Колумбия</td>
+            <td>Государственный</td>
+            <td>Испанский</td>
+            <td>52000</td>
+        </tr>
+        <tr>
+            <td>19</td>
+            <td>University of the West Indies (Mona)</td>
+            <td>1948</td>
+            <td>Кингстон</td>
+            <td>Ямайка</td>
+            <td>Государственный</td>
+            <td>Английский</td>
+            <td>18000</td>
+        </tr>
+        <tr>
+            <td>20</td>
+            <td>Universiti Malaya</td>
+            <td>1905</td>
+            <td>Куала-Лумпур</td>
+            <td>Малайзия</td>
+            <td>Государственный</td>
+            <td>Малайский</td>
+            <td>26000</td>
+        </tr>
+        <tr>
+            <td>21</td>
+            <td>Chulalongkorn University</td>
+            <td>1917</td>
+            <td>Бангкок</td>
+            <td>Таиланд</td>
+            <td>Государственный</td>
+            <td>Тайский</td>
+            <td>33000</td>
+        </tr>
+        <tr>
+            <td>22</td>
+            <td>Universitas Indonesia</td>
+            <td>1849</td>
+            <td>Депок</td>
+            <td>Индонезия</td>
+            <td>Государственный</td>
+            <td>Индонезийский</td>
+            <td>47000</td>
+        </tr>
+        <tr>
+            <td>23</td>
+            <td>University of the Philippines Diliman</td>
+            <td>1908</td>
+            <td>Кесон-Сити</td>
+            <td>Филиппины</td>
+            <td>Государственный</td>
+            <td>Английский</td>
+            <td>26000</td>
+        </tr>
+        <tr>
+            <td>24</td>
+            <td>Vietnam National University, Hanoi</td>
+            <td>1993</td>
+            <td>Ханой</td>
+            <td>Вьетнам</td>
+            <td>Государственный</td>
+            <td>Вьетнамский</td>
+            <td>53000</td>
+        </tr>
+        <tr>
+            <td>25</td>
+            <td>Seoul National University</td>
+            <td>1946</td>
+            <td>Сеул</td>
+            <td>Южная Корея</td>
+            <td>Государственный</td>
+            <td>Корейский</td>
+            <td>28000</td>
+        </tr>
+        <tr>
+            <td>26</td>
+            <td>Kyoto University</td>
+            <td>1897</td>
+            <td>Киото</td>
+            <td>Япония</td>
+            <td>Государственный</td>
+            <td>Японский</td>
+            <td>23000</td>
+        </tr>
+        <tr>
+            <td>27</td>
+            <td>Tsinghua University</td>
+            <td>1911</td>
+            <td>Пекин</td>
+            <td>Китай</td>
+            <td>Государственный</td>
+            <td>Китайский</td>
+            <td>48000</td>
+        </tr>
+        <tr>
+            <td>28</td>
+            <td>Fudan University</td>
+            <td>1905</td>
+            <td>Шанхай</td>
+            <td>Китай</td>
+            <td>Государственный</td>
+            <td>Китайский</td>
+            <td>31000</td>
+        </tr>
+        <tr>
+            <td>29</td>
+            <td>Jawaharlal Nehru University</td>
+            <td>1969</td>
+            <td>Нью-Дели</td>
+            <td>Индия</td>
+            <td>Государственный</td>
+            <td>Английский</td>
+            <td>8000</td>
+        </tr>
+        <tr>
+            <td>30</td>
+            <td>University of Delhi</td>
+            <td>1922</td>
+            <td>Нью-Дели</td>
+            <td>Индия</td>
+            <td>Государственный</td>
+            <td>Английский</td>
+            <td>132000</td>
+        </tr>
+        <tr>
+            <td>31</td>
+            <td>Aligarh Muslim University</td>
+            <td>1875</td>
+            <td>Алигарх</td>
+            <td>Индия</td>
+            <td>Государственный</td>
+            <td>Английский</td>
+            <td>30000</td>
+        </tr>
+        <tr>
+            <td>32</td>
+            <td>King Saud University</td>
+            <td>1957</td>
+            <td>Эр-Рияд</td>
+            <td>Саудовская Аравия</td>
+            <td>Государственный</td>
+            <td>Арабский</td>
+            <td>64000</td>
+        </tr>
+        <tr>
+            <td>33</td>
+            <td>University of Tehran</td>
+            <td>1934</td>
+            <td>Тегеран</td>
+            <td>Иран</td>
+            <td>Государственный</td>
+            <td>Персидский</td>
+            <td>37000</td>
+        </tr>
+        <tr>
+            <td>34</td>
+            <td>Istanbul University</td>
+            <td>1453</td>
+            <td>Стамбул</td>
+            <td>Турция</td>
+            <td>Государственный</td>
+            <td>Турецкий</td>
+            <td>86000</td>
+        </tr>
+        <tr>
+            <td>35</td>
+            <td>Middle East Technical University</td>
+            <td>1956</td>
+            <td>Анкара</td>
+            <td>Турция</td>
+            <td>Государственный</td>
+            <td>Английский</td>
+            <td>27000</td>
+        </tr>
+        <tr>
+            <td>36</td>
+            <td>University of Warsaw</td>
+            <td>1816</td>
+            <td>Варшава</td>
+            <td>Польша</td>
+            <td>Государственный</td>
+            <td>Польский</td>
+            <td>34000</td>
+        </tr>
+        <tr>
+            <td>37</td>
+            <td>Charles University</td>
+            <td>1348</td>
+            <td>Прага</td>
+            <td>Чехия</td>
+            <td>Государственный</td>
+            <td>Чешский</td>
+            <td>48000</td>
+        </tr>
+        <tr>
+            <td>38</td>
+            <td>Eötvös Loránd University</td>
+            <td>1635</td>
+            <td>Будапешт</td>
+            <td>Венгрия</td>
+            <td>Государственный</td>
+            <td>Венгерский</td>
+            <td>28000</td>
+        </tr>
+        <tr>
+            <td>39</td>
+            <td>University of Bucharest</td>
+            <td>1864</td>
+            <td>Бухарест</td>
+            <td>Румыния</td>
+            <td>Государственный</td>
+            <td>Румынский</td>
+            <td>24000</td>
+        </tr>
+        <tr>
+            <td>40</td>
+            <td>University of Belgrade</td>
+            <td>1808</td>
+            <td>Белград</td>
+            <td>Сербия</td>
+            <td>Государственный</td>
+            <td>Сербский</td>
+            <td>90000</td>
+        </tr>
+        <tr>
+            <td>41</td>
+            <td>University of Ljubljana</td>
+            <td>1919</td>
+            <td>Любляна</td>
+            <td>Словения</td>
+            <td>Государственный</td>
+            <td>Словенский</td>
+            <td>38000</td>
+        </tr>
+        <tr>
+            <td>42</td>
+            <td>Vilnius University</td>
+            <td>1579</td>
+            <td>Вильнюс</td>
+            <td>Литва</td>
+            <td>Государственный</td>
+            <td>Литовский</td>
+            <td>20000</td>
+        </tr>
+        <tr>
+            <td>43</td>
+            <td>University of Tartu</td>
+            <td>1632</td>
+            <td>Тарту</td>
+            <td>Эстония</td>
+            <td>Государственный</td>
+            <td>Эстонский</td>
+            <td>13000</td>
+        </tr>
+        <tr>
+            <td>44</td>
+            <td>University of Iceland</td>
+            <td>1911</td>
+            <td>Рейкьявик</td>
+            <td>Исландия</td>
+            <td>Государственный</td>
+            <td>Исландский</td>
+            <td>13000</td>
+        </tr>
+        <tr>
+            <td>45</td>
+            <td>University of Helsinki</td>
+            <td>1640</td>
+            <td>Хельсинки</td>
+            <td>Финляндия</td>
+            <td>Государственный</td>
+            <td>Финский</td>
+            <td>31000</td>
+        </tr>
+        <tr>
+            <td>46</td>
+            <td>Uppsala University</td>
+            <td>1477</td>
+            <td>Уппсала</td>
+            <td>Швеция</td>
+            <td>Государственный</td>
+            <td>Шведский</td>
+            <td>45000</td>
+        </tr>
+        <tr>
+            <td>47</td>
+            <td>University of Bergen</td>
+            <td>1946</td>
+            <td>Берген</td>
+            <td>Норвегия</td>
+            <td>Государственный</td>
+            <td>Норвежский</td>
+            <td>18000</td>
+        </tr>
+        <tr>
+            <td>48</td>
+            <td>University of Copenhagen</td>
+            <td>1479</td>
+            <td>Копенгаген</td>
+            <td>Дания</td>
+            <td>Государственный</td>
+            <td>Датский</td>
+            <td>38000</td>
+        </tr>
+        <tr>
+            <td>49</td>
+            <td>American University of Beirut</td>
+            <td>1866</td>
+            <td>Бейрут</td>
+            <td>Ливан</td>
+            <td>Частный</td>
+            <td>Английский</td>
+            <td>9000</td>
+        </tr>
+        <tr>
+            <td>50</td>
+            <td>University of Otago</td>
+            <td>1869</td>
+            <td>Данидин</td>
+            <td>Новая Зеландия</td>
+            <td>Государственный</td>
+            <td>Английский</td>
+            <td>20000</td>
+        </tr>
+    </table>
+    <footer>
+        <p>Гончаров Артём Андреевич Б9124-09.03.04(1)</p>
+    </footer>
+</body>
+
+</html>
