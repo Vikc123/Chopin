@@ -8,11 +8,47 @@
   <h1>Характеристики мостов</h1>
   <h2>Поиск мостов</h2>
   <form>
-    <div>
-      <label for="bridge-name">Название моста</label>
-      <input type="text" id="bridge-name" name="bridge_name">
-      <button type="submit">Найти</button>
-    </div>
+    <fieldset>
+      <legend>Страна моста</legend>
+      <div>
+        <label for="country">Выберите страну:</label>>
+        <select name="country" id="country">
+          <option value="ru">Россия</option>
+          <option value="us">США</option>
+          <option value="gb">Великобритания</option>
+        </select>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>Выберите тип моста</legend>
+      <div>
+        <input type="radio" id="vant" name="bridge_type" value="vant">
+        <label for="vant">Вантовый</label>
+      </div>
+      <div>
+        <input type="radio" id="podves" name="bridge_type" value="podves">
+        <label for="podves">Подвесной</label>
+      </div>
+      <div>
+        <input type="radio" id="archos" name="bridge_type" value="archos">
+        <label for="archos">Арочный</label>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>Назначение моста</legend>
+     <div>
+        <input type="checkbox" id="auto" name="specioliced" value="auto">
+        <label for="auto">Автомобоильный</label>
+      </div>
+      <div>
+        <input type="checkbox" id="rail" name="specioliced" value="rail">
+        <label for="rail">Железнодорожный</label>
+      </div>
+      <div>
+        <input type="checkbox" id="pesh" name="specioliced" value="pesh">
+        <label for="pesh">Пешеходный</label>
+      </div>
+    </fieldset>
   </form>
   <table>
     <thead>
