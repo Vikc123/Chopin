@@ -1,0 +1,16 @@
+/* Упражнение 2: напишите правила самостоятельно. */
+h1, h2 {
+    color: navy;
+}
+
+.note {
+    color: green;
+}
+
+#lead {
+    color: darkred;
+}
+
+p {
+    color: grey;
+}

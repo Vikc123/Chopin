@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Таблица мостов</title>
+</head>
+<body>
+  <h1>Характеристики мостов</h1>
+  <h2>Поиск мостов</h2>
+  <form>
+    <fieldset>
+      <legend>Страна моста</legend>
+      <div>
+        <label for="country">Выберите страну:</label>>
+        <select name="country" id="country">
+          <option value="ru">Россия</option>
+          <option value="us">США</option>
+          <option value="gb">Великобритания</option>
+        </select>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>Выберите тип моста</legend>
+      <div>
+        <input type="radio" id="vant" name="bridge_type" value="vant">
+        <label for="vant">Вантовый</label>
+      </div>
+      <div>
+        <input type="radio" id="podves" name="bridge_type" value="podves">
+        <label for="podves">Подвесной</label>
+      </div>
+      <div>
+        <input type="radio" id="archos" name="bridge_type" value="archos">
+        <label for="archos">Арочный</label>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>Назначение моста</legend>
+     <div>
+        <input type="checkbox" id="auto" name="specioliced" value="auto">
+        <label for="auto">Автомобоильный</label>
+      </div>
+      <div>
+        <input type="checkbox" id="rail" name="specioliced" value="rail">
+        <label for="rail">Железнодорожный</label>
+      </div>
+      <div>
+        <input type="checkbox" id="pesh" name="specioliced" value="pesh">
+        <label for="pesh">Пешеходный</label>
+      </div>
+    </fieldset>
+  </form>
+  <table>
+    <thead>
+      <tr>
+        <th>Название</th>
+        <th>Страна</th>
+        <th>Год открытия</th>
+        <th>Длина, м</th>
+      </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>Русский мост</td>
+      <td>Россия</td>
+      <td>2012</td>
+      <td>1885</td>
+    </tr>
+    <tr>
+      <td>Золотые Ворота</td>
+      <td>США</td>
+      <td>1937</td>
+      <td>2737</td>
+    </tr>
+    <tr>
+      <td>Тауэрский мост</td>
+      <td>Великобритания</td>
+      <td>1894</td>
+      <td>244</td>
+    </tr>
+    <tr>
+      <td>Бруклинский мост</td>
+      <td>США</td>
+      <td>1883</td>
+      <td>1825</td>
+    </tr>
+    <tr>
+      <td>Сиднейский мост</td>
+      <td>Австралия</td>
+      <td>1932</td>
+      <td>1149</td>
+    </tr>
+    </tbody>
+  </table>
+  <a href="index.html">На главную</a>
+</body>
+</html>

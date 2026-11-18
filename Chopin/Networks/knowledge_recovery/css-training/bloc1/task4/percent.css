@@ -1,0 +1,11 @@
+.page {
+    background-color: antiquewhite;
+    width: 80%;
+    margin: auto;
+}
+
+.panel {
+    background-color: aquamarine;
+    width: 50%;
+    margin: auto;
+}

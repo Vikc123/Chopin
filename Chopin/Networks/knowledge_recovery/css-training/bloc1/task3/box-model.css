@@ -1,0 +1,20 @@
+.card {
+    color: #0aa56f;
+    width: 260px;
+    padding: 16px;
+    border: 2px;
+    border-color: black;
+    margin: 12px;
+    background: antiquewhite;
+    border-style: dashed;
+}
+
+.regular-card {
+    color: #2196d2;
+}
+
+.fixed-card {
+    color: #50b566;
+    box-sizing: border-box;
+    
+}
